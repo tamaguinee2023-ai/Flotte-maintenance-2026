@@ -1388,6 +1388,152 @@ body[data-theme="amber"] {
   opacity: 0.85;
 }
 
+/* ===== RESPONSIVE COMPLET — TOUS MODULES ===== */
+
+/* --- Analytics tabs overflow scroll --- */
+@media(max-width:900px) {
+  .an-tabs {
+    overflow-x:auto; overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
+    width:100%; scrollbar-width:none;
+    padding-bottom:2px;
+  }
+  .an-tabs::-webkit-scrollbar { display:none; }
+
+  /* Analytics KPI grid */
+  .an-hero-kpis { grid-template-columns:repeat(2,1fr); gap:10px; }
+
+  /* Analytics charts 1 col */
+  .analytics-grid-2, .analytics-grid-3 { grid-template-columns:1fr !important; }
+
+  /* Analytics stat row (Costs page) */
+  .analytics-stat-row { grid-template-columns:repeat(2,1fr) !important; gap:10px; }
+
+  /* Costs analytics grid */
+  .analytics-grid { grid-template-columns:1fr !important; }
+
+  /* GPS two col */
+  .gps-two-col { grid-template-columns:1fr !important; }
+
+  /* Devis card body */
+  .devis-card-body { grid-template-columns:1fr 1fr !important; }
+
+  /* Devis stats */
+  .devis-stats { grid-template-columns:repeat(2,1fr) !important; }
+
+  /* Report options */
+  .report-options { grid-template-columns:1fr !important; }
+
+  /* Settings page form */
+  #page-settings .form-grid { grid-template-columns:1fr !important; }
+
+  /* RP columns grid */
+  .rp-columns-grid { grid-template-columns:repeat(2,1fr) !important; }
+
+  /* Catalogue grid */
+  .catalogue-grid { grid-template-columns:repeat(2,1fr) !important; padding:10px; gap:10px; }
+
+  /* TCO grid */
+  .tco-grid { grid-template-columns:1fr !important; }
+
+  /* Chart canvas height réduite */
+  .chart-canvas-wrap { height:180px !important; }
+  .chart-card-lg .chart-canvas-wrap { height:200px !important; }
+
+  /* Report layout: sidebar en haut, contenu en dessous */
+  .rp-layout { flex-direction:column !important; min-height:unset !important; }
+  .rp-sidebar { width:100% !important; border-right:none !important; border-bottom:1px solid var(--border2); overflow-y:unset; }
+  .rp-cat-group { display:inline-flex; flex-direction:column; margin-right:12px; }
+  .rp-sidebar > .rp-cat-group { display:inline-block; }
+  .rp-sidebar { display:flex; flex-wrap:wrap; gap:0; padding:10px; }
+  .rp-sidebar-label { width:100%; }
+  .rp-menu-item { white-space:nowrap; }
+}
+
+@media(max-width:600px) {
+  /* Analytics KPI 2 par ligne */
+  .an-hero-kpis { grid-template-columns:1fr 1fr; gap:8px; }
+  .an-kpi { padding:14px 12px; }
+  .an-kpi-val { font-size:20px; }
+
+  /* Analytics stat row 2 col */
+  .analytics-stat-row { grid-template-columns:1fr 1fr !important; gap:8px; }
+
+  /* Devis card body 1 col */
+  .devis-card-body { grid-template-columns:1fr !important; }
+
+  /* Devis card header wrap */
+  .devis-card-header { flex-wrap:wrap; gap:8px; }
+  .devis-actions { flex-wrap:wrap; }
+
+  /* Catalogue 1 col */
+  .catalogue-grid { grid-template-columns:1fr !important; }
+
+  /* Cat modal full screen */
+  .cat-modal { height:95vh; border-radius:16px 16px 0 0; }
+
+  /* GPS tabs scroll */
+  .gps-tabs {
+    overflow-x:auto; width:100%;
+    scrollbar-width:none;
+  }
+  .gps-tabs::-webkit-scrollbar { display:none; }
+
+  /* Costs tabs wrap */
+  .costs-tabs { gap:6px; }
+  .costs-tab-btn { font-size:12px; padding:7px 12px; }
+
+  /* RP columns 2 col */
+  .rp-columns-grid { grid-template-columns:1fr 1fr !important; }
+
+  /* Charts smaller */
+  .chart-canvas-wrap { height:160px !important; }
+  .chart-card-lg .chart-canvas-wrap { height:180px !important; }
+
+  /* Page settings compact */
+  #page-settings .form-grid { grid-template-columns:1fr !important; gap:10px; }
+
+  /* Devis items table scroll */
+  .devis-items-table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .devis-items-table { min-width:480px; }
+
+  /* Modal footer stack */
+  .modal-footer { flex-wrap:wrap; gap:8px; }
+  .modal-footer .btn-primary,
+  .modal-footer .btn-secondary { flex:1; min-width:120px; justify-content:center; }
+
+  /* Driver grid 1 col */
+  .driver-grid { grid-template-columns:1fr !important; }
+
+  /* Docs grid 2 col */
+  .docs-grid { grid-template-columns:repeat(2,1fr) !important; gap:10px; }
+
+  /* Inline grids JS (GPS sim, tanks, tires) */
+  [style*="grid-template-columns:1fr 1fr 1fr auto"],
+  [style*="grid-template-columns:1fr auto auto"],
+  [style*="grid-template-columns:1fr 1fr auto"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media(max-width:400px) {
+  .an-hero-kpis { grid-template-columns:1fr 1fr; gap:6px; }
+  .an-kpi-val { font-size:18px; }
+  .analytics-stat-row { grid-template-columns:1fr 1fr !important; }
+  .docs-grid { grid-template-columns:1fr !important; }
+  .catalogue-grid { grid-template-columns:1fr !important; }
+  .devis-stats { grid-template-columns:1fr 1fr !important; }
+}
+
+/* ===== STATS GRID 4 COL ===== */
+.stats-grid-4 {
+  grid-template-columns: repeat(4,1fr) !important;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+@media(max-width:900px) { .stats-grid-4 { grid-template-columns:repeat(2,1fr) !important; } }
+@media(max-width:400px)  { .stats-grid-4 { grid-template-columns:repeat(2,1fr) !important; } }
+
 /* ===== SCROLL SMOOTH ===== */
 html { scroll-behavior: smooth; }
 .main { scroll-behavior: smooth; }
@@ -1493,9 +1639,13 @@ html { scroll-behavior: smooth; }
 .cal-legend-dot { width:10px; height:10px; border-radius:3px; }
 .cal-filter-bar { display:flex; gap:10px; padding:12px 20px; border-bottom:1px solid var(--border2); flex-wrap:wrap; }
 @media(max-width:700px){
-  .cal-cell{min-height:50px;}
+  .cal-cell{min-height:50px; padding:4px;}
   .cal-event{display:none;}
   .cal-cell.has-events::after{content:'•';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);color:var(--gold2);font-size:14px;}
+  .cal-dow { font-size:9px; padding:8px 2px; }
+  .cal-day-num { font-size:11px; }
+  .cal-filter-bar { padding:10px 12px; gap:6px; }
+  .cal-legend { padding:10px 12px; gap:10px; }
 }
 
 /* ===== PHOTOS / DOCUMENTS ===== */
@@ -3602,6 +3752,7 @@ html { scroll-behavior: smooth; }
       <!-- Lignes articles -->
       <div style="margin-top:20px">
         <div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Lignes du devis</div>
+        <div class="devis-items-table-wrap">
         <table class="devis-items-table" id="devis-items-table">
           <thead>
             <tr>
@@ -3614,6 +3765,7 @@ html { scroll-behavior: smooth; }
           </thead>
           <tbody id="devis-items-body"></tbody>
         </table>
+        </div><!-- /devis-items-table-wrap -->
         <button class="btn-add-item" onclick="addDevisItem()">➕ Ajouter une ligne</button>
       </div>
 
@@ -3662,7 +3814,7 @@ html { scroll-behavior: smooth; }
       </div>
       <button class="modal-close" onclick="closeReportModal()">✕</button>
     </div>
-    <div class="modal-body" style="padding:0;display:flex;min-height:480px">
+    <div class="modal-body rp-layout" style="padding:0;display:flex;min-height:480px">
 
       <!-- LEFT: Category menu -->
       <div class="rp-sidebar">
@@ -7011,7 +7163,7 @@ function renderDetailTab() {
     const totalLabor = vMaint.reduce((s,m)=>s+(parseFloat(m.labor_cost)||0),0);
     const totalCost = vMaint.reduce((s,m)=>s+(parseFloat(m.total_cost)||0),0);
     body.innerHTML = `<div class="tab-content active">
-      <div class="stats-grid" style="grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px">
+      <div class="stats-grid stats-grid-4">
         <div class="stat-card"><div class="stat-icon">🔧</div><div class="stat-value">${vMaint.length}</div><div class="stat-label">Interventions</div></div>
         <div class="stat-card"><div class="stat-icon">⚙️</div><div class="stat-value">${totalParts.toFixed(2)}€</div><div class="stat-label">Coût pièces</div></div>
         <div class="stat-card"><div class="stat-icon">👷</div><div class="stat-value">${totalLabor.toFixed(2)}€</div><div class="stat-label">Main d'œuvre</div></div>
@@ -7069,7 +7221,7 @@ function renderDetailTab() {
     const avgConso = vFuel.filter(f=>parseFloat(f.consumption_per_100km)>0);
     const moy = avgConso.length ? avgConso.reduce((s,f)=>s+(parseFloat(f.consumption_per_100km)||0),0)/avgConso.length : 0;
     body.innerHTML = `<div class="tab-content active">
-      <div class="stats-grid" style="grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px">
+      <div class="stats-grid stats-grid-4">
         <div class="stat-card"><div class="stat-icon">⛽</div><div class="stat-value">${vFuel.length}</div><div class="stat-label">Pleins</div></div>
         <div class="stat-card"><div class="stat-icon">💧</div><div class="stat-value">${totalLitres.toFixed(0)}L</div><div class="stat-label">Total litres</div></div>
         <div class="stat-card"><div class="stat-icon">💰</div><div class="stat-value">${totalCost.toFixed(2)}€</div><div class="stat-label">Coût total</div></div>
